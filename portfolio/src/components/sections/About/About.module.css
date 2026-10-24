@@ -1,0 +1,86 @@
+.about {
+  display: grid;
+  grid-template-columns: 360px 1fr;
+  grid-template-areas: 'photo content';
+  gap: 56px;
+  align-items: start;
+  padding-top: 160px;
+}
+
+.photo {
+  grid-area: photo;
+  width: 100%;
+  aspect-ratio: 4 / 5;
+  object-fit: cover;
+  object-position: center top;
+}
+
+.content {
+  grid-area: content;
+  display: flex;
+  flex-direction: column;
+  gap: 48px;
+  max-width: 880px;
+}
+
+.statement {
+  font-size: var(--text-statement);
+  font-weight: 600;
+  line-height: 1.1;
+  letter-spacing: -0.03em;
+}
+
+.facts {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 40px;
+}
+
+@media (max-width: 1100px) {
+  .about {
+    grid-template-columns: 260px 1fr;
+    gap: 40px;
+  }
+
+  .facts {
+    grid-template-columns: 1fr;
+    gap: 20px;
+  }
+}
+
+/* ---------- Mobile: label → photo → statement → facts ---------- */
+
+@media (max-width: 767px) {
+  .about {
+    grid-template-columns: 1fr;
+    grid-template-areas:
+      'label'
+      'photo'
+      'statement'
+      'facts';
+    gap: 0;
+    padding-top: 88px;
+  }
+
+  /* Flatten so the label can move above the photo */
+  .content {
+    display: contents;
+  }
+
+  .label {
+    grid-area: label;
+    padding-bottom: 20px;
+  }
+
+  .statement {
+    grid-area: statement;
+    padding-block: 32px;
+  }
+
+  .facts {
+    grid-area: facts;
+    grid-template-columns: 1fr;
+    gap: 0;
+    border-bottom: var(--border);
+  }
+}

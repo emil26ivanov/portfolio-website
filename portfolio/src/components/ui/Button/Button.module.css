@@ -1,0 +1,44 @@
+.button {
+  display: inline-flex;
+  align-items: center;
+  gap: 12px;
+  font-size: var(--text-body);
+  font-weight: 600;
+  white-space: nowrap;
+}
+
+.icon {
+  transition: transform 0.2s ease;
+}
+
+.primary {
+  height: 52px;
+  padding-inline: 28px;
+  background: var(--color-ink);
+  color: var(--color-white);
+}
+
+.primary:hover .icon {
+  transform: translateX(4px);
+}
+
+.secondary {
+  gap: 6px;
+}
+
+.secondary:hover .icon {
+  transform: translateY(3px);
+}
+
+@media (max-width: 767px) {
+  .button {
+    width: 100%;
+    height: 56px;
+    justify-content: space-between;
+    padding-inline: 20px;
+  }
+
+  .secondary {
+    border: var(--border);
+  }
+}

@@ -1,0 +1,143 @@
+/* ---------- Desktop: list row ---------- */
+
+.item {
+  position: relative;
+  display: grid;
+  grid-template-columns: 40px 1fr 200px 56px auto;
+  grid-template-areas: 'number name type year arrow';
+  align-items: center;
+  column-gap: 32px;
+  padding-block: 32px;
+  border-top: var(--border);
+}
+
+.number,
+.year {
+  font-family: var(--font-mono);
+  font-size: var(--text-mono);
+}
+
+.number {
+  grid-area: number;
+}
+
+.name {
+  grid-area: name;
+  font-size: var(--text-project);
+  font-weight: 700;
+  line-height: 1;
+  letter-spacing: -0.03em;
+  transition: transform 0.3s ease;
+}
+
+/* Type and year sit directly in the row's grid on desktop */
+.meta {
+  display: contents;
+}
+
+.type {
+  grid-area: type;
+  font-size: var(--text-small);
+  color: var(--color-muted);
+}
+
+.year {
+  grid-area: year;
+}
+
+.arrow {
+  grid-area: arrow;
+  font-size: 28px;
+  line-height: 1;
+  transition: transform 0.3s ease;
+}
+
+.preview {
+  position: absolute;
+  z-index: 1;
+  top: 50%;
+  left: 51%;
+  width: 300px;
+  opacity: 0;
+  pointer-events: none;
+  transform: translateY(-50%);
+  transition: opacity 0.3s ease;
+}
+
+.image {
+  width: 100%;
+  aspect-ratio: 16 / 10;
+  object-fit: cover;
+}
+
+.item:hover .name,
+.item:focus-visible .name {
+  transform: translateX(20px);
+}
+
+.item:hover .arrow,
+.item:focus-visible .arrow {
+  transform: rotate(-45deg);
+}
+
+.item:hover .preview,
+.item:focus-visible .preview {
+  opacity: 1;
+}
+
+/* Hide the floating preview where it would cover the type/year columns */
+@media (max-width: 1100px) {
+  .preview {
+    display: none;
+  }
+}
+
+/* ---------- Mobile: card ---------- */
+
+@media (max-width: 767px) {
+  .item {
+    grid-template-columns: auto 1fr auto;
+    grid-template-areas:
+      'preview preview preview'
+      'number name arrow'
+      'meta meta meta';
+    column-gap: 12px;
+    row-gap: 14px;
+    padding-block: 0;
+    border-top: 0;
+  }
+
+  .preview {
+    grid-area: preview;
+    position: static;
+    display: block;
+    width: auto;
+    opacity: 1;
+    transform: none;
+  }
+
+  .meta {
+    grid-area: meta;
+    display: flex;
+    justify-content: space-between;
+    padding-top: 10px;
+    border-top: var(--border);
+    font-family: var(--font-mono);
+    font-size: var(--text-mono-sm);
+  }
+
+  .type {
+    font-size: inherit;
+  }
+
+  .arrow {
+    font-family: var(--font-mono);
+    font-size: 22px;
+    transform: rotate(-45deg);
+  }
+
+  .item:hover .name,
+  .item:focus-visible .name {
+    transform: none;
+  }
+}

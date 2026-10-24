@@ -1,0 +1,38 @@
+.fact {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  padding-top: 14px;
+  border-top: var(--border);
+}
+
+.label {
+  font-family: var(--font-mono);
+  font-size: var(--text-mono-sm);
+  color: var(--color-muted);
+}
+
+.value {
+  font-size: 17px;
+  font-weight: 500;
+  line-height: 1.3;
+}
+
+/* Mobile: label left, value right, one row each */
+@media (max-width: 767px) {
+  .fact {
+    flex-direction: row;
+    justify-content: space-between;
+    gap: 16px;
+    padding-block: 14px;
+  }
+
+  .label {
+    white-space: nowrap;
+  }
+
+  .value {
+    font-size: 15px;
+    text-align: right;
+  }
+}

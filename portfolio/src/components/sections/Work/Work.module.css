@@ -1,0 +1,110 @@
+.work {
+  padding-top: 140px;
+}
+
+.head {
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+  gap: 24px;
+  padding-bottom: 40px;
+}
+
+.title {
+  display: flex;
+  align-items: flex-start;
+  gap: 8px;
+  font-size: var(--text-h2);
+  font-weight: 800;
+  line-height: 0.95;
+  letter-spacing: -0.04em;
+}
+
+.count {
+  font-family: var(--font-mono);
+  font-size: var(--text-small);
+  font-weight: 500;
+  line-height: normal;
+  letter-spacing: 0;
+}
+
+.hint {
+  font-family: var(--font-mono);
+  font-size: var(--text-mono);
+  color: var(--color-muted);
+  white-space: nowrap;
+}
+
+.list {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  border-bottom: var(--border);
+}
+
+/* Shown while there are no projects yet */
+.empty {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 16px;
+  padding-block: 48px;
+  border-block: var(--border);
+}
+
+.emptyTitle {
+  font-size: var(--text-project);
+  font-weight: 700;
+  line-height: 1;
+  letter-spacing: -0.03em;
+}
+
+.emptyText {
+  font-size: var(--text-body-lg);
+  line-height: 1.5;
+  color: var(--color-body);
+}
+
+.emptyLink {
+  margin-top: 8px;
+  font-weight: 600;
+}
+
+.emptyLink:hover {
+  text-decoration: underline;
+  text-underline-offset: 4px;
+}
+
+/* Hover preview is hidden below this width, so the hint is too */
+@media (max-width: 1100px) {
+  .hint {
+    display: none;
+  }
+}
+
+/* ---------- Mobile ---------- */
+
+@media (max-width: 767px) {
+  .work {
+    padding-top: 64px;
+  }
+
+  .head {
+    padding-bottom: 28px;
+  }
+
+  .title {
+    gap: 6px;
+  }
+
+  .count {
+    font-size: var(--text-mono-sm);
+  }
+
+  .list {
+    display: flex;
+    flex-direction: column;
+    gap: 40px;
+    border-bottom: 0;
+  }
+}

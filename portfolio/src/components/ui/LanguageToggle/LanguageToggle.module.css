@@ -1,0 +1,21 @@
+.toggle {
+  display: flex;
+  font-family: var(--font-mono);
+  font-size: var(--text-mono);
+  color: var(--color-muted);
+}
+
+.option {
+  display: flex;
+  gap: 0.5ch;
+  padding-left: 0.5ch;
+}
+
+.option:first-child {
+  padding-left: 0;
+}
+
+.option button:hover,
+.active {
+  color: var(--color-ink);
+}

@@ -1,0 +1,50 @@
+.item {
+  display: grid;
+  grid-template-areas:
+    'number'
+    'title'
+    'description';
+  align-content: start;
+  gap: 16px;
+  padding-top: 20px;
+  border-top: var(--border);
+}
+
+.number {
+  grid-area: number;
+  font-family: var(--font-mono);
+  font-size: var(--text-mono);
+}
+
+.title {
+  grid-area: title;
+  font-size: var(--text-h3);
+  font-weight: 700;
+  line-height: normal;
+  letter-spacing: -0.03em;
+}
+
+.description {
+  grid-area: description;
+  max-width: 340px;
+  font-size: var(--text-body);
+  line-height: 1.55;
+  color: var(--color-body);
+}
+
+/* Mobile: title and number share the first line */
+@media (max-width: 767px) {
+  .item {
+    grid-template-columns: 1fr auto;
+    grid-template-areas:
+      'title number'
+      'description description';
+    align-items: baseline;
+    gap: 12px;
+    padding-top: 16px;
+  }
+
+  .description {
+    max-width: none;
+  }
+}
