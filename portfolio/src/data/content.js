@@ -102,9 +102,9 @@ const fr = {
   ],
   menu: { open: 'Menu', close: 'Fermer' },
   hero: {
-    headline: ['Je crée', 'des sites pour', 'les gens qui ont des idées.'],
+    headline: ['Je crée des', 'sites pour ceux', 'qui ont des idées.'],
     intro:
-      'Je suis Emil, développeur basé à Montréal. Je conçois et code des sites web clairs et rapides pour les petites entreprises, les travailleurs autonomes et tous ceux qui lancent quelque chose de nouveau.',
+      'Je suis Emil, développeur à Montréal. Je conçois et code des sites clairs et rapides pour les petites entreprises, les travailleurs autonomes et ceux qui lancent un projet.',
     primaryCta: 'Démarrer un projet',
     secondaryCta: 'Voir les projets',
     meta: {
